@@ -54,8 +54,6 @@ function handleStartPageLoad() {
     const continueBtn = document.getElementById('continueBtn');
     const resetBtn = document.getElementById('resetBtn');
 
-    if (!playerName || !newPlayerSection) return;
-
     if (playerName) {
         newPlayerSection.style.display = 'none';
         returningPlayerSection.style.display = 'block';
