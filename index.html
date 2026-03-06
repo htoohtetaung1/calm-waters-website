@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Waters - Start</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="start-page">
+    <div class="container">
+        <div class="logo">🎣</div>
+        <h1>Calm Waters</h1>
+
+        <!-- New Player Form -->
+        <div id="newPlayerSection">
+            <p class="greeting">Welcome, angler. Before you cast your line, let us know your name.</p>
+            <form id="startForm">
+                <div class="form-group">
+                    <label for="playerName">Enter your name:</label>
+                    <input 
+                        type="text" 
+                        id="playerName" 
+                        placeholder="Your name here..." 
+                        required
+                        autocomplete="off"
+                    >
+                </div>
+                <button type="submit" class="start-btn">Start Fishing →</button>
+            </form>
+        </div>
+
+        <!-- Returning Player Welcome -->
+        <div id="returningPlayerSection" style="display: none;">
+            <p class="greeting" id="welcomeMessage"></p>
+            <button id="continueBtn" class="start-btn">Start Fishing →</button>
+            <button id="resetBtn" class="reset-btn-secondary">New Game</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Waters - Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <div class="status-item">
+            <span id="biomeDisplay">☀️ Sunny</span>
+        </div>
+        <div class="status-item">
+            <span>💰</span>
+            <span class="coins" id="coinsText">0</span>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <a href="shop.html" class="nav-card">Shop</a>
+        <a href="stats.html" class="nav-card">Stats</a>
+        <a href="about.html" class="nav-card">About</a>
+        <button class="settings-btn" id="settingsBtn">⚙️</button>
+
+        <!-- Settings Popup -->
+        <div class="settings-popup" id="settingsPopup">
+            <div class="settings-title">Settings</div>
+
+            <div class="setting-item">
+                <label class="setting-label">🔊 Music Volume</label>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+            </div>
+
+            <div class="setting-item">
+                <button class="reset-btn" id="resetBtn">Reset Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Confirmation Modal -->
+    <div class="modal" id="resetModal">
+        <div class="modal-content">
+            <div class="modal-title">⚠️ Reset Progress?</div>
+            <div class="modal-text">
+                This will delete all your progress and start you over. This action cannot be undone.
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" id="cancelBtn">Cancel</button>
+                <button class="modal-btn confirm" id="confirmResetBtn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Area -->
+    <div class="game-area">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
