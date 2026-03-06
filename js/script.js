@@ -1,4 +1,4 @@
-/* CALM WATERS - Global JavaScript */
+/* CALM WATERS - JavaScript */
 
 // Game state object
 let gameState = {
@@ -43,9 +43,7 @@ function formatTime(seconds) {
     return `${hours}h ${minutes}m`;
 }
 
-// ============================================
 // START PAGE FUNCTIONS
-// ============================================
 
 function handleStartPageLoad() {
     const playerName = localStorage.getItem('playerName');
@@ -92,9 +90,7 @@ function handleStartPageLoad() {
     }
 }
 
-// ============================================
 // GAME PAGE FUNCTIONS
-// ============================================
 
 function handleGamePageLoad() {
     loadGameState();
@@ -177,9 +173,8 @@ function handleGamePageLoad() {
     setInterval(saveGameState, 5000);
 }
 
-// ============================================
+
 // SHOP PAGE FUNCTIONS
-// ============================================
 
 function handleShopPageLoad() {
     loadGameState();
@@ -264,9 +259,8 @@ function handleShopPageLoad() {
     updateShopDisplay();
 }
 
-// ============================================
+
 // STATS PAGE FUNCTIONS
-// ============================================
 
 function handleStatsPageLoad() {
     loadGameState();
@@ -301,10 +295,8 @@ function handleStatsPageLoad() {
     updateStatsDisplay();
 }
 
-// ============================================
-// PAGE INITIALIZATION
-// ============================================
 
+// PAGE INITIALIZATION
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
     
