@@ -27,9 +27,15 @@ body {
 
 /* GAME PAGE STYLES */
 body.game-page {
-    background: linear-gradient(180deg, #C8E9F0 0%, #FFFFFF 100%);
+    
     overflow: hidden;
     height: 100vh;
+    
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Left Panel - Floating Text */
@@ -48,6 +54,7 @@ body.game-page {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
 }
 
 .status-item:last-child {
@@ -125,7 +132,16 @@ body.game-page {
     position: relative;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(180deg, #C8E9F0 0%, #FFFFFF 100%);
+}
+
+/* Fishing GIF */
+.fishing-gif {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: auto;
+    pointer-events: none;
 }
 
 /* Settings Popup */
@@ -167,6 +183,9 @@ body.game-page {
 
 .setting-item {
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .setting-item:last-child {
@@ -868,4 +887,220 @@ body.about-page {
     .item-card {
         padding: 1.5rem;
     }
+}
+
+.gold-popup {
+    position: absolute;
+    color: #FFB703;
+    font-weight: 700;
+    font-size: 0.8rem;
+    animation: goldFade 1s ease-out forwards;
+    pointer-events: none;
+    margin-left: 5rem;
+}
+
+@keyframes goldFade {
+    0%   { opacity: 0; transform: translateY(0); }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; transform: translateY(-12px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.item-description small {
+    font-size: 0.78rem;
+    color: var(--button-blue);
+    font-weight: 700;
+}
+
+.advice-ticker {
+    position: fixed;
+    top: 0;
+    left: 300px;
+    width: 60%;
+    background: rgb(202, 234, 241,0.1);
+    color: rgb(199, 245, 255);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    z-index: 999;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+#adviceTicker {
+    display: inline-block;
+    animation: tickerScroll 18s linear infinite;
+}
+
+@keyframes tickerScroll {
+    0%   { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+}
+
+.fish-popup {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    animation: fishFloat 1s ease-out forwards;
+    pointer-events: none;
+    bottom: 120px;
+    left: 150px;
+}
+
+@keyframes fishFloat {
+    0%   { opacity: 0; transform: translateY(0); }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; transform: translateY(-40px); }
+    100% { opacity: 0; transform: translateY(-60px); }
+}
+
+.todo-wrapper {
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    top: unset;
+    left: unset;
+    z-index: 100;
+    width: 260px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.todo-wrapper:hover {
+    opacity: 1;
+}
+
+.todo-toggle {
+    width: 100%;
+    background: rgba(195, 232, 245, 0.7);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.todo-toggle:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.todo-arrow {
+    transition: transform 0.3s;
+    font-size: 0.75rem;
+}
+
+.todo-arrow.open {
+    transform: rotate(180deg);
+}
+
+.todo-dropdown {
+    background: rgba(195, 232, 245, 0.7);
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-top: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none;
+    animation: slideDown 0.2s ease-out;
+}
+
+.todo-dropdown.open {
+    display: block;
+}
+
+.todo-input-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.todo-input-row input {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    background: white;
+    outline: none;
+}
+
+.todo-input-row input:focus {
+    border-color: var(--button-blue);
+}
+
+.todo-add-btn {
+    background: var(--button-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.todo-add-btn:hover {
+    background: #4f93c9;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+    color: var(--text);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.todo-item input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: var(--button-blue);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.todo-item span {
+    flex: 1;
+    transition: all 0.4s ease;
+}
+
+.todo-item.completing span {
+    text-decoration: line-through;
+    color: var(--light-text);
+}
+
+.todo-item.removing {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    border: none;
 }

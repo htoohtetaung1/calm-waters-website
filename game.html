@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calm Waters - Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="game-page">
     <!-- Left Panel -->
     <div class="left-panel">
@@ -25,13 +27,17 @@
         <a href="about.html" class="nav-card">About</a>
         <button class="settings-btn" id="settingsBtn">⚙️</button>
 
-        <!-- Settings Popup -->
         <div class="settings-popup" id="settingsPopup">
             <div class="settings-title">Settings</div>
 
             <div class="setting-item">
-                <label class="setting-label">🔊</label>
+                <label class="setting-label">🎵</label>
                 <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+            </div>
+
+            <div class="setting-item">
+                <label class="setting-label">🔊</label>
+                <input type="range" class="volume-slider" id="sfxSlider" min="0" max="100" value="50">
             </div>
 
             <div class="setting-item">
@@ -56,8 +62,26 @@
 
     <!-- Main Game Area -->
     <div class="game-area">
+        <img src="assets/img/fishing.gif" class="fishing-gif" id="fishingGif" alt="Fishing">
+        <!-- To Do List -->
+        <div class="todo-wrapper">
+            <button class="todo-toggle" id="todoToggle">📋 To Do <span class="todo-arrow">▼</span></button>
+            <div class="todo-dropdown" id="todoDropdown">
+                <div class="todo-input-row">
+                    <input type="text" id="todoInput" placeholder="Add a task..." autocomplete="off">
+                    <button class="todo-add-btn" id="todoAddBtn">+</button>
+                </div>
+                <ul class="todo-list" id="todoList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="advice-ticker">
+        <span id="adviceTicker">Loading advice...</span>
     </div>
 
     <script src="js/script.js"></script>
+
 </body>
+
 </html>
