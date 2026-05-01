@@ -346,7 +346,6 @@ body.game-page {
 }
 
 /* START PAGE STYLES */
-
 body.start-page {
     background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 60%, var(--water) 100%);
     color: var(--text);
@@ -815,7 +814,6 @@ body.about-page {
 }
 
 /* RESPONSIVE DESIGN */
-
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
@@ -912,6 +910,7 @@ body.about-page {
     font-weight: 700;
 }
 
+/* Random adive ticker styles */
 .advice-ticker {
     position: fixed;
     top: 0;
@@ -940,6 +939,7 @@ body.about-page {
     100% { transform: translateX(-100%); }
 }
 
+/* Fish popup styles */
 .fish-popup {
     position: absolute;
     font-size: 1.2rem;
@@ -958,6 +958,7 @@ body.about-page {
     100% { opacity: 0; transform: translateY(-60px); }
 }
 
+/* To-do list styles */
 .todo-wrapper {
     position: fixed;
     bottom: 1rem;

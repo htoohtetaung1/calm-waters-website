@@ -210,7 +210,7 @@ function initTodoList() {
     }
 }
 
-// Starts the passive loops (Runs on EVERY page)
+// Starts passive loops (gold and autosave)
 function startGlobalLoops() {
     // Passive Gold Loop
     setInterval(() => {
@@ -252,8 +252,7 @@ function updateVisualsAndAudio() {
         body.style.backgroundAttachment = 'scroll';
     }
 
-    // 2. Setup Background Music
-    // We don't want music on the start screen
+    // 2. Setup Background Music (no music on index page)
     if (!body.classList.contains('start-page')) {
         if (!bgMusicAudio) {
             bgMusicAudio = new Audio(assets.music);
@@ -541,19 +540,16 @@ function startAdviceTicker() {
         }
     }
 
-    fetchAdvice(); // run once immediately
-    setInterval(fetchAdvice, 60000); // then every 1 minute
+    fetchAdvice();
+    // fetch advice every 1 minute
+    setInterval(fetchAdvice, 60000);
 }
 
-// PAGE INITIALIZATION (Runs on EVERY page)
+// PAGE INITIALIZATION
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Load data
+    // Load data, music, and loops
     loadGameState();
-
-    // 2. Setup universal audio and visuals
     updateVisualsAndAudio();
-
-    // 3. Start universal loops (gold gain, saving)
     startGlobalLoops();
 
     // 4. Force audio start on first click if browser blocked autoplay
@@ -563,7 +559,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, { once: true });
 
-    // 5. Run page-specific logic
+    //Run page-specific loading
     const body = document.body;
     if (body.classList.contains('start-page')) {
         handleStartPageLoad();
@@ -575,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function () {
         handleStatsPageLoad();
     }
 
-    // 6. Do a first sweep of UI updates
+    //Do a first sweep of UI updates
     updateGlobalUI();
 });
 
